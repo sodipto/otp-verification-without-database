@@ -17,6 +17,6 @@
 
     public class AuthDTO
     {
-        public string Message { get; set; } = "Login Successful.";
+        public string Message { get; set; }
     }
 }

@@ -1,5 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using otp_verify_without_database.DTOBuilders.Auth;
+using otp_verify_without_database.DTOs;
+using otp_verify_without_database.RequestPayloads;
+using otp_verify_without_database.Utils;
 
 namespace otp_verify_without_database.Controllers.V1
 {
@@ -11,8 +14,7 @@ namespace otp_verify_without_database.Controllers.V1
         {
         }
 
-        #region End Points
-        #region Endpoints
+        #region End Points  
         [HttpPost, Route("send-otp")]
         [ProducesResponseType(typeof(OTPDTO), 200)]
         [PayloadValidator]
