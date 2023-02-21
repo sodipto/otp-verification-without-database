@@ -31,7 +31,6 @@ namespace otp_verify_without_database.DTOBuilders.Auth
             if (!isVerifiedOTP)
                 ErrorHelper.ThrowValidatorException("OTP", "OTP invalid or expired.");
 
-
             return new AuthDTO { Message = "Login Successful." };
         }
 

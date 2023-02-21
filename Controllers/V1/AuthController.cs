@@ -18,18 +18,18 @@ namespace otp_verify_without_database.Controllers.V1
         [HttpPost, Route("send-otp")]
         [ProducesResponseType(typeof(OTPDTO), 200)]
         [PayloadValidator]
-        public async Task<IActionResult> SendOTP([FromBody] OTPPayload payload)
+        public IActionResult SendOTP([FromBody] OTPPayload payload)
         {
-            var dto = await AuthDTOBuilder.SendOTP(payload, _smsService);
+            var dto = AuthDTOBuilder.SendOTP(payload);
             return Ok(dto);
         }
 
         [HttpPost, Route("login")]
         [ProducesResponseType(typeof(AuthDTO), 200)]
         [PayloadValidator]
-        public async Task<IActionResult> Login([FromBody] LoginPayload payload)
+        public IActionResult Login([FromBody] LoginPayload payload)
         {
-            var dto = await AuthDTOBuilder.Login(payload, _userService);
+            var dto = AuthDTOBuilder.Login(payload);
             return Ok(dto);
         }
         #endregion
