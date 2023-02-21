@@ -10,9 +10,7 @@ namespace otp_verify_without_database.Controllers.V1
     [Route("[controller]")]
     public class AuthController : BaseController
     {
-        public AuthController()
-        {
-        }
+        public AuthController() { }
 
         #region End Points  
         [HttpPost, Route("send-otp")]
