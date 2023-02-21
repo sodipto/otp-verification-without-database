@@ -2,6 +2,12 @@
 using otp_verify_without_database.DTOs;
 using otp_verify_without_database.RequestPayloads;
 using otp_verify_without_database.Utils;
+using VaultSharp;
+using VaultSharp.V1.AuthMethods;
+using VaultSharp.V1.AuthMethods.Token;
+using VaultSharp.V1.AuthMethods.UserPass;
+using VaultSharp.V1.Commons;
+using VaultSharp.V1.SecretsEngines;
 
 namespace otp_verify_without_database.DTOBuilders.Auth
 {
@@ -65,6 +71,26 @@ namespace otp_verify_without_database.DTOBuilders.Auth
         }
 
         private static int GenerateOTP() => new Random().Next(100000, 999999);
+
+        private static string GetOTPAuthKey()
+        {
+            string key = "";
+
+            // Authenticate
+            var tokn = new TokenAuthMethodInfo(vaultToken: " hvs.ewX70geUt1CsAT7HwqyWPwep");
+            var config = new VaultClientSettings("http://127.0.0.1:8200", tokn);
+            var client = new VaultClient(config);
+
+            // Read a secret
+            var secret = client.V1.Secrets.KeyValue.V2.ReadSecretAsync(
+                 path: "/auth",
+                 mountPoint: "secret"
+             ).Result;
+
+            key = secret.Data.Data["otp_auth_key"];
+
+            return key;
+        }
 
         #endregion
     }
