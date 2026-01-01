@@ -1,4 +1,4 @@
-# OTP Verify using Cryptography and without any Database
+## OTP Verify using Cryptography and without any Database
 
 ### Dependencies
 This verification depends on the [HMCSHA256]. Computes a Hash-based Message Authentication Code (HMAC) by using the SHA256 hash function. See [Details]
@@ -18,7 +18,7 @@ This verification depends on the [HMCSHA256]. Computes a Hash-based Message Auth
 
 ### Step 1: Prerequisites
 
- * Please make sure you have installed .NET 6 SDK. If not download [here]. 
+ * Please make sure you have installed .NET 6 SDK or Above. If not download [here]. 
 
 #### Step 2: Download or clone the repository
 
