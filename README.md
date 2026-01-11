@@ -29,8 +29,8 @@ https://github.com/sodipto/.net-core-otp-verify-without-database.git
 ## Version Information
 
 ```sh
-C# 10.0
-.NET 6.0
+C# 10.0 or above
+.NET 6.0 or above 
 ```
 
  [HMCSHA256]: <https://learn.microsoft.com/en-us/dotnet/api/system.security.cryptography.hmacsha256?view=net-7.0>
