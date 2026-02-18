@@ -1,4 +1,4 @@
-## OTP Verify using Cryptography and without any Database
+## OTP Verification using Cryptography and without any Database 
 
 ### Dependencies
 This verification depends on the [HMCSHA256]. Computes a Hash-based Message Authentication Code (HMAC) by using the SHA256 hash function. See [Details]
