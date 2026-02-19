@@ -3,7 +3,7 @@
 ### Dependencies
 This verification depends on the [HMCSHA256]. Computes a Hash-based Message Authentication Code (HMAC) by using the SHA256 hash function. See [Details]
 
-### OTP Verification process
+### OTP Verification steps
 
 - A hash(server end) is created with the phone number and then sent to the user as a OTP token.
 - The user received the OTP via SMS.
